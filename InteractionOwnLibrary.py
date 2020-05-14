@@ -1,7 +1,7 @@
+from bokeh.io import show
 from bokeh.layouts import column, row
 from bokeh.models import ColumnDataSource, CustomJS, Slider
 from bokeh.plotting import figure
-from bokeh.io import output_notebook, show
 
 
 class VariableDescription:

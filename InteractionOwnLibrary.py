@@ -1,7 +1,10 @@
+import random
 from bokeh.io import show
 from bokeh.layouts import column, row
 from bokeh.models import ColumnDataSource, CustomJS, Slider
 from bokeh.plotting import figure
+from IPython.display import Image, display, clear_output, HTML
+from ipywidgets import widgets
 
 
 class VariableDescription:
@@ -65,3 +68,23 @@ def create_simulation_from_description(gd: GraphDescription):
     inputs = column(slider_list)
     layout = row(plot, inputs)
     show(layout)
+
+
+def MCQ(question: str, choices: [str], correct: str):
+    random.shuffle(choices)
+    buttons = []
+    display(HTML("<h3>"+question+"</h3>"))
+    for choice in choices:
+        buttons.append(widgets.Button(description=choice))
+    container = widgets.HBox(children=buttons)
+
+    def on_button_clicked(b):
+        container.close()
+        clear_output()
+        if b.description == correct:
+            print("Hourray, you found the right answer!")
+        else:
+            print("Well, that actually wasn't the right answer")
+    for b in buttons:
+        b.on_click(on_button_clicked)
+    display(container)

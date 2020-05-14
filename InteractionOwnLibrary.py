@@ -46,7 +46,11 @@ def create_simulation_from_description(gd: GraphDescription):
     args_dict["source"] = source
     plot = figure(plot_height=400, plot_width=600, title=gd.description,
                   tools="pan,wheel_zoom",
-                  x_range=gd.x_range, y_range=gd.y_range)
+                  x_range=gd.x_range, y_range=gd.y_range
+                  )
+
+    plot.xaxis.axis_label = gd.x_label
+    plot.yaxis.axis_label = gd.y_label
 
     plot.line("x", "y", source=source, line_width=3, line_alpha=0.6)
 

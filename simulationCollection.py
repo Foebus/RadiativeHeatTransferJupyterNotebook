@@ -29,7 +29,8 @@ heat_flux_graph_formula = """
         var data = source.data;
         var A1 = area1.value;
         var A2 = area2.value;
-        area1.end=A2
+        area1.end=A2-area2.step
+        if(A1 >= A2){ A1 = A2-area2.step; area1.value = A2-area2.step;}
         var e1 = emissivity1.value;
         var T1 = temperature1.value;
         var T2 = temperature2.value;

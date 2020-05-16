@@ -20,8 +20,8 @@ def heat_flux_graph_inital_values(A1=1, A2=10, e1=0.4, T1=275, T2=280, emissivit
     return x_axis, points
 
 
-heat_flux_graph_cylinder_variables = [VariableDescription("temperature1", "Outer temperature [K]", 275, 350, 0.1, 275),
-                                      VariableDescription("temperature2", "Inner temperature [K]", 275, 350, 0.1, 280),
+heat_flux_graph_cylinder_variables = [VariableDescription("temperature1", "Inner temperature [K]", 275, 350, 0.1, 275),
+                                      VariableDescription("temperature2", "Outer temperature [K]", 275, 350, 0.1, 280),
                                       VariableDescription("emissivity1", "Inner ε", 0, 1, 0.002, 0.4),
                                       VariableDescription("area1", "Inner area1 [m²]", 1, 10, 0.1, 1),
                                       VariableDescription("area2", "Outer area [m²]", 1, 10, 0.1, 10)]
@@ -54,8 +54,8 @@ heat_flux_graph_cylinder_formula = """
 heat_flux_graph_cylinder_description = GraphDescription(heat_flux_graph_cylinder_variables,
                                                         heat_flux_graph_cylinder_formula,
                                                         heat_flux_graph_inital_values(), [0, 1], [-10, 0],
-                                                        "Heat flux value for two concentric cylinders", 400, 600,
-                                                        "Outer ε", "Heat flux value []")
+                                                        "Heat flux value of the inner cylinder for two concentric cylinders",
+                                                        400, 600, "Outer ε", "Heat flux value []")
 
 
 #######################################################################################################################

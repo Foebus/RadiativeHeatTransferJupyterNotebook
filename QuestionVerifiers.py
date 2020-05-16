@@ -13,5 +13,5 @@ def check_exercise(expected, got, accepted_delta):
     if abs(got-expected) <= accepted_delta:
         print("Hooray, you got it right!")
     else:
-        print("Your solution is a bit too far from the right one, try again!")
+        print("Your solution is not quite the right one! Try again!")
 

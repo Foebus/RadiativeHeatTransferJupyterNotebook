@@ -82,7 +82,7 @@ def MCQ(question: str, choices: [str], correct: str):
         container.close()
         clear_output()
         if b.description == correct:
-            print("Hourray, you found the right answer!")
+            print("Hooray, you found the right answer!")
         else:
             print("Well, that actually wasn't the right answer")
     for b in buttons:

@@ -70,7 +70,7 @@ def create_simulation_from_description(gd: GraphDescription):
     show(layout)
 
 
-def MCQ(question: str, choices: [str], correct: str):
+def MCQ(question: str, choices: [str], correct: str, optional_additional_explanation=None):
     random.shuffle(choices)
     buttons = []
     display(HTML("<h3>"+question+"</h3>"))
@@ -85,6 +85,8 @@ def MCQ(question: str, choices: [str], correct: str):
             print("Hooray, you found the right answer!")
         else:
             print("Well, that actually wasn't the right answer")
+        if optional_additional_explanation is not None:
+            print(optional_additional_explanation)
     for b in buttons:
         b.on_click(on_button_clicked)
     display(container)

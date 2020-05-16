@@ -3,7 +3,7 @@ from bokeh.io import show
 from bokeh.layouts import column, row
 from bokeh.models import ColumnDataSource, CustomJS, Slider
 from bokeh.plotting import figure
-from IPython.display import Image, display, clear_output, HTML
+from IPython.display import Image, display, clear_output, HTML, Latex
 from ipywidgets import widgets
 
 
@@ -86,7 +86,7 @@ def MCQ(question: str, choices: [str], correct: str, optional_additional_explana
         else:
             print("Well, that actually wasn't the right answer")
         if optional_additional_explanation is not None:
-            print(optional_additional_explanation)
+            display(Latex(optional_additional_explanation))
     for b in buttons:
         b.on_click(on_button_clicked)
     display(container)

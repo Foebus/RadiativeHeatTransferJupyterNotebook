@@ -55,7 +55,7 @@ heat_flux_graph_cylinder_description = GraphDescription(heat_flux_graph_cylinder
                                                         heat_flux_graph_cylinder_formula,
                                                         heat_flux_graph_inital_values(), [0, 1], [-10, 0],
                                                         "Heat flux value of the inner cylinder for two concentric cylinders",
-                                                        400, 600, "Outer ε", "Heat flux value []")
+                                                        400, 600, "Outer ε", "Heat flux value [W/m²]")
 
 
 #######################################################################################################################
